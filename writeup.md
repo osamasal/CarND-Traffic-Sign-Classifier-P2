@@ -15,7 +15,6 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 
-
 [image1]: ./Visualization.png "Visualization"
 [image2]: ./Visualization_pie.png "Visualization pie chart"
 [image3]: ./examples/grayscale.jpg "Grayscaling"
@@ -32,11 +31,10 @@ Here is a link to my [project code](https://github.com/osamasal/CarND-Traffic-Si
 
 ### Data Set Summary & Exploration
 
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
+I some statistics of the traffic signs data set:
 
 * The size of training set is 34799
-* The size of the validation set is ????????????????????????????????????????????????????
+* The size of the validation set is **????????????????????????????????????????????????????**
 * The size of test set is 12630
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
@@ -73,16 +71,18 @@ Here is an example of an original image and an augmented image:
 
 ![alt text][image4]
 
-The difference between the original data set and the augmented data set is the following ... 
+The difference between the original data set and the augmented data set is that the augmented data set concludes copies of input data which have been randomly rotated 90, 180, or 270 degrees.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+
+My model was largely based on the LeNet network. It included 
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
+| Input         		| 32 x 32 x 1 grayscale images     				| 
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
