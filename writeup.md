@@ -133,11 +133,11 @@ Here are seven German traffic signs that I found on the web:
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
+| Image			        |     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
 | no entry     			| no entry 										|
 | speed limit 50		| speed limit 50      							|
-| keep right      		| keep right   									| 
+| keep right      		| keep right   									|
 | priority road			| priority road									|
 | stop sign	      		| stop sign			       		 				|
 | right turn	   		| right turn					 				|
@@ -146,29 +146,78 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 7 of the 7 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
 
-#### 3. Describe how certain the model is when predicting on each of the seven new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the seven new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 32nd cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a "no entry" sign (probability of 0.98), and the image does contain a "no entry" sign. The top five soft max probabilities were
+** Please note that all probabilities are given to three decimal places, so very small probabilities show a value of 0.000. ***
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .988         			| no entry   									| 
+For the first image, the model is very sure that this is a "no entry" sign (probability of 0.988), and the image does contain a "no entry" sign. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .988         			| no entry   									|
 | .006     				| go straight or right							|
 | .004					| ahead only									|
 | .002	      			| stop sign 					 				|
 | .002				    | road work         							|
 
+For the second image, the model is very sure that this is a "speed limit 50" sign (probability of 0.916), and the image does contain a "speed limit 50" sign. The top five soft max probabilities were:
 
-For the second image, the model is relatively sure that this is a "speed limit 50" sign (probability of 0.91), and the image does contain a "speed limit 50" sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .916         			| speed limit 50								| 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .916         			| speed limit 50								|
 | .045     				| speed limit 30			      				|
 | .014					| speed limit 60								|
 | .012	      			| speed limit 80 				 				|
 | .006				    | speed limit 70       							|
 
+For the third image, the model is relatively sure that this is a "keep right" sign (probability of 0.802), and the image does contain a "keep right" sign. The top five soft max probabilities were:
 
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .802         			| keep right      								|
+| .188     				| keep left		        	      				|
+| .008					| turn right ahead								|
+| .000	      			| turn left ahead				 				|
+| .000				    | road work          							|
+
+For the forth image, the model is very sure that this is a "priority road" sign (probability of 1.000), and the image does contain a "priority road" sign. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 1.000        			| priority road	     							|
+| 0.000     			| roundabout mandatory     	      				|
+| 0.000					| no vehicles   								|
+| 0.000	      			| yield				 				            |
+| 0.000				    | end of all speed and passing limits     		|
+
+For the fifth image, the model is very sure that this is a "stop" sign (probability of 0.999), and the image does contain a "stop" sign. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 0.999        			| stop    	     	    						|
+| 0.000     			| speed limit 60          	      				|
+| 0.000					| speed limit 20   								|
+| 0.000	      			| speed limit 50					            |
+| 0.000				    | speed limit 70    		                    |
+
+For the sixth image, the model is very sure that this is a "right turn ahead" sign (probability of 0.999), and the image does contain a "right turn ahead" sign. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 0.999        			| right turn ahead	     	    				|
+| 0.000     			| keep right          	      				    |
+| 0.000					| go straight or right   						|
+| 0.000	      			| keep left					                    |
+| 0.000				    | right-of-way at the next intersection         |
+
+For the seventh image, the model is very sure that this is a "yield" sign (probability of 0.999), and the image does contain a "yield" sign. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| 0.999        			| yield	     	                				|
+| 0.000     			| bumpy road          	      				    |
+| 0.000					| traffic signals   	       					|
+| 0.000	      			| no vehicles				                    |
+| 0.000				    | priority road                                 |
