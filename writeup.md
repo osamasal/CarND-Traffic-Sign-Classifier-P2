@@ -14,18 +14,18 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
-[image1]: ./Visualization.png "Visualization"
-[image2]: ./Visualization_pie.png "Visualization pie chart"
-[image3]: ./examples/grayscale.jpg "Grayscaling"
-[image4]: ./examples/random_noise.jpg "Random Noise"
-[image5]: ./Dataset/keep_right.png "Traffic Sign: keep right"
-[image6]: ./Dataset/no_entry.png "Traffic Sign: no entry"
-[image7]: ./Dataset/priority_road.png "Traffic Sign: priority road"
-[image8]: ./Dataset/right_turn.png "Traffic Sign: right turn"
-[image9]: ./Dataset/speed_limit_50.png "Traffic Sign: speed limit 50"
-[image10]: ./Dataset/stop.png "Traffic Sign: stop"
-[image11]: ./Dataset/yield.png "Traffic Sign: yield"
+[image1]:  ./Images/Visualization.png "Visualization"
+[image2]:  ./Images/Visualization_pie.png "Visualization pie chart"
+[image3]:  ./Images/Color.png "Color"
+[image4]:  ./Images/Grayscale.png "Grayscaling"
+[image5]:  ./Images/random_noise.jpg "Random Noise"
+[image6]:  ./Dataset/keep_right.png "Traffic Sign: keep right"
+[image7]:  ./Dataset/no_entry.png "Traffic Sign: no entry"
+[image8]:  ./Dataset/priority_road.png "Traffic Sign: priority road"
+[image9]:  ./Dataset/right_turn.png "Traffic Sign: right turn"
+[image10]: ./Dataset/speed_limit_50.png "Traffic Sign: speed limit 50"
+[image11]: ./Dataset/stop.png "Traffic Sign: stop"
+[image12]: ./Dataset/yield.png "Traffic Sign: yield"
 
 Here is a link to my [project code](https://github.com/osamasal/CarND-Traffic-Sign-Classifier-P2/blob/master/Traffic_Sign_Classifier.ipynb)
 
@@ -34,7 +34,7 @@ Here is a link to my [project code](https://github.com/osamasal/CarND-Traffic-Si
 I some statistics of the traffic signs data set:
 
 * The size of training set is 34799
-* The size of the validation set is **????????????????????????????????????????????????????**
+* The size of the validation set is 4410
 * The size of test set is 12630
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
@@ -60,6 +60,7 @@ As a first step, I decided to convert the images to grayscale because this reduc
 Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image3]
+![alt text][image4]
 
 As a last step, I normalized the image data because I wanted to avoid having the values involved in the calculations to become too big or too small (to avoid accumulating errors). I did this by subtracting the mean value for each image from the image pixel values, then I divide each pixel value by the maximum value found in the image pixel. I did this to avoid having image pixels values being too small when most of the image values are around 128. This why I decided to avoid using the provided "(pixel - 128)/ 128" formula.
 
@@ -69,7 +70,7 @@ To add more data to the the data set, I doubled the size of the input data set b
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image4]
+![alt text][image5]
 
 The difference between the original data set and the augmented data set is that the augmented data set concludes copies of input data which have been randomly rotated 90, 180, or 270 degrees.
 
@@ -121,13 +122,13 @@ If a well known architecture was chosen:
 
 Here are seven German traffic signs that I found on the web:
 
-![alt text][image5]
 ![alt text][image6]
 ![alt text][image7]
 ![alt text][image8]
 ![alt text][image9]
 ![alt text][image10]
 ![alt text][image11]
+![alt text][image12]
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
