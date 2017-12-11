@@ -16,16 +16,17 @@ The goals / steps of this project are the following:
 
 [image1]:  ./Images/Visualization.png "Visualization"
 [image2]:  ./Images/Visualization_pie.png "Visualization pie chart"
-[image3]:  ./Images/Color.png "Color"
-[image4]:  ./Images/Grayscale.png "Grayscaling"
-[image5]:  ./Images/random_noise.jpg "Random Noise"
-[image6]:  ./Dataset/keep_right.png "Traffic Sign: keep right"
-[image7]:  ./Dataset/no_entry.png "Traffic Sign: no entry"
-[image8]:  ./Dataset/priority_road.png "Traffic Sign: priority road"
-[image9]:  ./Dataset/right_turn.png "Traffic Sign: right turn"
-[image10]: ./Dataset/speed_limit_50.png "Traffic Sign: speed limit 50"
-[image11]: ./Dataset/stop.png "Traffic Sign: stop"
-[image12]: ./Dataset/yield.png "Traffic Sign: yield"
+[image3]:  ./Images/Color.png "Color image"
+[image4]:  ./Images/Grayscale.png "Grayscaled image"
+[image5]:  ./Images/original.png "Original image"
+[image6]:  ./Images/rotated.png "Rotated image"
+[image7]:  ./Dataset/keep_right.png "Traffic Sign: keep right"
+[image8]:  ./Dataset/no_entry.png "Traffic Sign: no entry"
+[image9]:  ./Dataset/priority_road.png "Traffic Sign: priority road"
+[image10]:  ./Dataset/right_turn.png "Traffic Sign: right turn"
+[image11]: ./Dataset/speed_limit_50.png "Traffic Sign: speed limit 50"
+[image12]: ./Dataset/stop.png "Traffic Sign: stop"
+[image13]: ./Dataset/yield.png "Traffic Sign: yield"
 
 Here is a link to my [project code](https://github.com/osamasal/CarND-Traffic-Sign-Classifier-P2/blob/master/Traffic_Sign_Classifier.ipynb)
 
@@ -71,19 +72,20 @@ To add more data to the the data set, I doubled the size of the input data set b
 Here is an example of an original image and an augmented image:
 
 ![alt text][image5]
+![alt text][image6]
 
 The difference between the original data set and the augmented data set is that the augmented data set concludes copies of input data which have been randomly rotated 90, 180, or 270 degrees.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-My model was largely based on the LeNet network. It included 
+My model was largely based on the LeNet network. It included
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32 x 32 x 1 grayscale images     				| 
+| Layer         		|     Description	        					|
+|:---------------------:|:---------------------------------------------:|
+| Input         		| 32 x 32 x 1 grayscale images     				|
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
@@ -122,13 +124,13 @@ If a well known architecture was chosen:
 
 Here are seven German traffic signs that I found on the web:
 
-![alt text][image6]
 ![alt text][image7]
 ![alt text][image8]
 ![alt text][image9]
 ![alt text][image10]
 ![alt text][image11]
 ![alt text][image12]
+![alt text][image13]
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
