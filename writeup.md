@@ -123,7 +123,7 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are seven German traffic signs that I found on the web:
+Here are seven German traffic signs that I found on the web. Images are of different sizes, but are converted to (32 x 32 x 1) before being consumed by the network:
 
 ![alt text][image7]
 ![alt text][image8]
@@ -133,7 +133,7 @@ Here are seven German traffic signs that I found on the web:
 ![alt text][image12]
 ![alt text][image13]
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 Here are the results of the prediction:
 
@@ -148,11 +148,11 @@ Here are the results of the prediction:
 | yield     			| yield             							|
 
 
-The model was able to correctly guess 7 of the 7 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 7 of the 7 traffic signs, which gives an accuracy of 0.100. This compares favorably to the accuracy on the test set of 0.911.
 
 #### 3. Describe how certain the model is when predicting on each of the seven new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
-The code for making predictions on my final model is located in the 32nd cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 8th cell of the Ipython notebook.
 
 ** Please note that all probabilities are given to three decimal places, so very small probabilities show a value of 0.000. ***
 
