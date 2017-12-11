@@ -42,11 +42,12 @@ I some statistics of the traffic signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a bar chart showing how the training data is distributed across the various classes.
+As can be seen in this graph, some traffic signs have many training data while other have very few.
 
 ![alt text][image1]
 
-This image shows the distribution of the signs in the input training set.
+This image shows the distribution of the signs in the input training set (i.e. bigger slices of the pie correspond to more training data).
 
 ![alt text][image2]
 
