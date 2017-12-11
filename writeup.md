@@ -57,16 +57,16 @@ This image shows the same distribution only viewed as a pie chart.
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because this reduces the complexity (and dimensions) of the network. For example of having input of shape (32 x 32 x 3), it is now (32 x 32 x 1) when being fed through the network.
+As a first step, I decided to convert the images to grayscale because this reduces the complexity (and dimensions) of the network. For example instead of having input of shape (32 x 32 x 3), it is now (32 x 32 x 1) when being fed through the network.
 
 Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image3]
 ![alt text][image4]
 
-As a last step, I normalized the image data because I wanted to avoid having the values involved in the calculations to become too big or too small (to avoid accumulating errors). I did this by subtracting the mean value for each image from the image pixel values, then I divide each pixel value by the maximum value found in the image pixel. I did this to avoid having image pixels values being too small when most of the image values are around 128. This why I decided to avoid using the provided "(pixel - 128)/ 128" formula.
+As a last step, I normalized the image data because I wanted to avoid having the values involved in the calculations to become too big or too small (to avoid accumulating errors). I did this by subtracting the mean value for each image from the image pixel values, then I divided each pixel value by the maximum value found in the image pixel. I did this to avoid having image pixels values being too small when most of the image values are around 128. This why I decided to avoid using the provided "(pixel - 128)/ 128" formula.
 
-I decided to generate additional data because I wanted to allow my network to be more flexible in recognizing traffic signs which do not appear perfectly in the image (e.g. rotated images).
+I also decided to generate training additional data because I wanted to allow my network to be more flexible in recognizing traffic signs which do not appear perfectly in the image (e.g. rotated images).
 
 To add more data to the the data set, I doubled the size of the input data set by randomly introducing a rotated version of each input image to the input set. The image is randomly rotated 90, 180, or 270 degrees before being added to the input set.
 
@@ -75,7 +75,7 @@ Here is an example of an original image and an augmented image:
 ![alt text][image5]
 ![alt text][image6]
 
-The difference between the original data set and the augmented data set is that the augmented data set concludes copies of input data which have been randomly rotated 90, 180, or 270 degrees.
+The difference between the original data set and the augmented data set is that the augmented data set includes copies of input data which have been randomly rotated 90, 180, or 270 degrees.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
