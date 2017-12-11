@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load pickled data</span>
@@ -11878,7 +11878,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11903,6 +11903,7 @@ div#notebook {
 <span class="n">n_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of training examples =&quot;</span><span class="p">,</span> <span class="n">n_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of validation set =&quot;</span><span class="p">,</span> <span class="n">n_valid</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of testing examples =&quot;</span><span class="p">,</span> <span class="n">n_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image data shape =&quot;</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of classes =&quot;</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
@@ -11925,7 +11926,7 @@ div#notebook {
 
     <span class="n">X_train_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rot_image</span><span class="p">)</span>
     <span class="n">y_train_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
-
+    
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_train_temp</span><span class="p">))</span>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_temp</span><span class="p">))</span>
 
@@ -11948,6 +11949,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of training examples = 34799
+Number of validation set = 4410
 Number of testing examples = 12630
 Image data shape = (32, 32, 3)
 Number of classes = 43
@@ -11984,7 +11986,7 @@ done!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -13821,7 +13823,7 @@ kJCQkLBJ4/8ByTOVGNQCTdAAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
@@ -13845,7 +13847,7 @@ kJCQkLBJ4/8ByTOVGNQCTdAAAAAASUVORK5CYII=
     <span class="n">gray_image</span>  <span class="o">=</span> <span class="n">color_image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;LA&#39;</span><span class="p">)</span>  
     <span class="n">pix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gray_image</span><span class="p">)</span>
     <span class="n">pix</span> <span class="o">=</span> <span class="n">pix</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">pix</span><span class="p">,</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">pix</span><span class="p">,</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="c1"># Grayscale and normalize the input images</span>
 <span class="k">def</span> <span class="nf">GrayscaleAndNormalizeImages</span><span class="p">(</span><span class="n">num_items</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
@@ -13855,10 +13857,10 @@ kJCQkLBJ4/8ByTOVGNQCTdAAAAAASUVORK5CYII=
         <span class="n">gray_image</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">input_data</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
         <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">gray_image</span><span class="p">)</span>
         <span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">gray_image</span><span class="p">)</span>
-        <span class="c1"># norm_image = (np.array(gray_image) - 128.0) / 128</span>
+        <span class="n">norm_image</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gray_image</span><span class="p">)</span> <span class="o">-</span> <span class="mf">128.0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">128</span>
         <span class="n">norm_image</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gray_image</span><span class="p">)</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">max_value</span>
         <span class="n">Temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">norm_image</span><span class="p">)</span>
-        
+                
     <span class="k">return</span> <span class="n">Temp</span>
 
 <span class="n">X_train_norm</span> <span class="o">=</span> <span class="n">GrayscaleAndNormalizeImages</span><span class="p">(</span><span class="n">n_train</span><span class="p">,</span> <span class="n">X_train</span><span class="p">)</span>
@@ -13900,7 +13902,7 @@ kJCQkLBJ4/8ByTOVGNQCTdAAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Define your architecture here.</span>
@@ -14003,7 +14005,7 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Train your model here.</span>
@@ -14114,94 +14116,94 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 <pre>Training...
 
 EPOCH 1 ...
-Validation Accuracy = 0.424
+Validation Accuracy = 0.504
 
 EPOCH 2 ...
-Validation Accuracy = 0.595
+Validation Accuracy = 0.662
 
 EPOCH 3 ...
-Validation Accuracy = 0.656
+Validation Accuracy = 0.734
 
 EPOCH 4 ...
-Validation Accuracy = 0.741
+Validation Accuracy = 0.793
 
 EPOCH 5 ...
-Validation Accuracy = 0.770
+Validation Accuracy = 0.824
 
 EPOCH 6 ...
-Validation Accuracy = 0.815
+Validation Accuracy = 0.841
 
 EPOCH 7 ...
-Validation Accuracy = 0.832
+Validation Accuracy = 0.850
 
 EPOCH 8 ...
-Validation Accuracy = 0.849
+Validation Accuracy = 0.862
 
 EPOCH 9 ...
-Validation Accuracy = 0.854
+Validation Accuracy = 0.870
 
 EPOCH 10 ...
-Validation Accuracy = 0.856
+Validation Accuracy = 0.886
 
 EPOCH 11 ...
-Validation Accuracy = 0.875
+Validation Accuracy = 0.886
 
 EPOCH 12 ...
-Validation Accuracy = 0.875
+Validation Accuracy = 0.908
 
 EPOCH 13 ...
-Validation Accuracy = 0.876
+Validation Accuracy = 0.906
 
 EPOCH 14 ...
-Validation Accuracy = 0.880
+Validation Accuracy = 0.911
 
 EPOCH 15 ...
-Validation Accuracy = 0.891
+Validation Accuracy = 0.907
 
 EPOCH 16 ...
-Validation Accuracy = 0.896
+Validation Accuracy = 0.916
 
 EPOCH 17 ...
-Validation Accuracy = 0.902
-
-EPOCH 18 ...
-Validation Accuracy = 0.903
-
-EPOCH 19 ...
 Validation Accuracy = 0.912
 
+EPOCH 18 ...
+Validation Accuracy = 0.920
+
+EPOCH 19 ...
+Validation Accuracy = 0.926
+
 EPOCH 20 ...
-Validation Accuracy = 0.913
-
-EPOCH 21 ...
-Validation Accuracy = 0.914
-
-EPOCH 22 ...
-Validation Accuracy = 0.927
-
-EPOCH 23 ...
-Validation Accuracy = 0.904
-
-EPOCH 24 ...
-Validation Accuracy = 0.923
-
-EPOCH 25 ...
-Validation Accuracy = 0.928
-
-EPOCH 26 ...
-Validation Accuracy = 0.902
-
-EPOCH 27 ...
-Validation Accuracy = 0.927
-
-EPOCH 28 ...
 Validation Accuracy = 0.929
 
-EPOCH 29 ...
+EPOCH 21 ...
+Validation Accuracy = 0.924
+
+EPOCH 22 ...
+Validation Accuracy = 0.922
+
+EPOCH 23 ...
+Validation Accuracy = 0.927
+
+EPOCH 24 ...
+Validation Accuracy = 0.928
+
+EPOCH 25 ...
+Validation Accuracy = 0.932
+
+EPOCH 26 ...
 Validation Accuracy = 0.931
 
+EPOCH 27 ...
+Validation Accuracy = 0.937
+
+EPOCH 28 ...
+Validation Accuracy = 0.938
+
+EPOCH 29 ...
+Validation Accuracy = 0.942
+
 EPOCH 30 ...
-Validation Accuracy = 0.935
+Validation Accuracy = 0.941
 
 Model saved
 done!
@@ -14236,7 +14238,7 @@ done!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them here.</span>
@@ -14320,7 +14322,7 @@ done!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Run the predictions here and use the model to output the prediction for each image.</span>
@@ -14366,7 +14368,7 @@ done!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Calculate the accuracy for these 5 new images. </span>
@@ -14445,7 +14447,7 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web. </span>
@@ -14484,37 +14486,36 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Top 5 probabilites for &#34;no_entry.png&#34; are:
-TopKV2(values=array([[  9.88356769e-01,   6.70456188e-03,   4.71648760e-03,
-          2.18933827e-04,   2.05948390e-06]], dtype=float32), indices=array([[17, 36, 35, 14, 25]], dtype=int32))
+TopKV2(values=array([[  9.99842763e-01,   1.25973907e-04,   3.07631090e-05,
+          4.39990913e-07,   3.10051966e-08]], dtype=float32), indices=array([[17, 35, 36, 14, 33]], dtype=int32))
 
 
 Top 5 probabilites for &#34;speed_limit_50.png&#34; are:
-TopKV2(values=array([[ 0.91608733,  0.04545074,  0.0144701 ,  0.01255044,  0.00629062]], dtype=float32), indices=array([[2, 1, 3, 5, 4]], dtype=int32))
+TopKV2(values=array([[ 0.84858328,  0.06647062,  0.04044235,  0.02532514,  0.00843434]], dtype=float32), indices=array([[2, 1, 5, 3, 4]], dtype=int32))
 
 
 Top 5 probabilites for &#34;keep_right.png&#34; are:
-TopKV2(values=array([[  8.02784324e-01,   1.88003704e-01,   8.76800437e-03,
-          1.77018665e-04,   6.50209913e-05]], dtype=float32), indices=array([[38, 39, 33, 34, 25]], dtype=int32))
+TopKV2(values=array([[ 0.63871831,  0.2046473 ,  0.13878717,  0.00497103,  0.00359403]], dtype=float32), indices=array([[38, 25, 39, 30, 31]], dtype=int32))
 
 
 Top 5 probabilites for &#34;priority_road.png&#34; are:
-TopKV2(values=array([[  1.00000000e+00,   4.50928433e-10,   6.32439739e-13,
-          6.92812574e-14,   1.30806307e-14]], dtype=float32), indices=array([[12, 40, 15, 13, 32]], dtype=int32))
+TopKV2(values=array([[  1.00000000e+00,   2.07147841e-10,   1.62439066e-14,
+          2.17052087e-15,   4.28877345e-16]], dtype=float32), indices=array([[12, 40,  7, 13, 35]], dtype=int32))
 
 
 Top 5 probabilites for &#34;stop.png&#34; are:
-TopKV2(values=array([[  9.99991298e-01,   4.81950246e-06,   1.70189401e-06,
-          9.78440198e-07,   7.03590331e-07]], dtype=float32), indices=array([[14,  3,  0,  2,  4]], dtype=int32))
+TopKV2(values=array([[  9.99988794e-01,   4.49072104e-06,   4.11491237e-06,
+          7.69590201e-07,   6.55991812e-07]], dtype=float32), indices=array([[14,  0,  1,  4,  2]], dtype=int32))
 
 
 Top 5 probabilites for &#34;right_turn.png&#34; are:
-TopKV2(values=array([[  9.99273598e-01,   5.48034499e-04,   7.67853344e-05,
-          5.12885927e-05,   2.49298100e-05]], dtype=float32), indices=array([[33, 38, 36, 39, 11]], dtype=int32))
+TopKV2(values=array([[  9.96405363e-01,   2.01683003e-03,   6.33911171e-04,
+          3.78020603e-04,   2.83627014e-04]], dtype=float32), indices=array([[33, 37, 36, 38, 39]], dtype=int32))
 
 
 Top 5 probabilites for &#34;yield.png&#34; are:
-TopKV2(values=array([[  9.99664068e-01,   1.73782086e-04,   8.48412674e-05,
-          6.13945158e-05,   1.00489087e-05]], dtype=float32), indices=array([[13, 22, 26, 15, 12]], dtype=int32))
+TopKV2(values=array([[  9.99930263e-01,   2.30310288e-05,   2.12145278e-05,
+          1.39810736e-05,   1.04941537e-05]], dtype=float32), indices=array([[13, 22, 15, 26, 29]], dtype=int32))
 
 
 done!
