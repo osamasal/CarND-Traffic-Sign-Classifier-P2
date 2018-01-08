@@ -80,22 +80,44 @@ The difference between the original data set and the augmented data set is that 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-My model was largely based on the LeNet network. It included
+My model was largely based on the LeNet network. I adjusted the input and output sizes to match the dimensions of the data I'm working with. I also added an extra fully-connected layer (layer 5) to increase the accuracy of the network. I discovered that adding yet another fully connected layer did not help improve the network's accuracy and in fact decreased it.
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					|
 |:---------------------:|:---------------------------------------------:|
-| Input         		| 32 x 32 x 1 grayscale images     				|
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Layer 1         		|                               				|
+| Input         		| 32x32x1 grayscale images      				|
+| Convolution 3x3     	| 1x1 stride, valid padding, output is 28x28x6 	|
+| Activation         	| Relu + 50% probability dropout                |
+| Max pooling         	| 2x2 stride, input is 28x28x6, output is 14x14x6 |
+|                       |                                               |
+| Layer 2         		|                               				|
+| Input         		| 14x14x6                       				|
+| Convolution 3x3     	| 1x1 stride, valid padding, output is 10x10x16 |
+| Activation         	| Relu + 50% probability dropout                |
+| Max pooling         	| 2x2 stride, input is 10x10x16, output is 5x5x16 |
+| Flatten         	    | Flattened 5x5x16 to 400                       |
+|                       |                                               |
+| Layer 3         		|                               				|
+| Input         		| 400                       				    |
+| Fully Connected layer | Output is 260                                 |
+| Activation         	| Relu + 50% probability dropout                |
+|                       |                                               |
+| Layer 4         		|                               				|
+| Input         		| 260                       				    |
+| Fully Connected layer | Output is 120                                 |
+| Activation         	| Relu + 50% probability dropout                |
+|                       |                                               |
+| Layer 5         		|                               				|
+| Input         		| 120                       				    |
+| Fully Connected layer | Output is 84                                  |
+| Activation         	| Relu + 50% probability dropout                |
+|                       |                                               |
+| Layer 6         		|                               				|
+| Input         		| 84                        				    |
+| Fully Connected layer | Output is 43                                  |
+| Activation         	| Relu + 50% probability dropout                |
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
